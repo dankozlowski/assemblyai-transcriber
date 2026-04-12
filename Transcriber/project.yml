@@ -1,0 +1,44 @@
+name: Transcriber
+options:
+  bundleIdPrefix: com.dankozlowski
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  Transcriber:
+    type: application
+    platform: macOS
+    sources:
+      - path: Transcriber
+    settings:
+      base:
+        INFOPLIST_FILE: Transcriber/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Transcriber/Transcriber.entitlements
+        PRODUCT_BUNDLE_IDENTIFIER: com.dankozlowski.Transcriber
+        CODE_SIGN_IDENTITY: "Transcriber Dev"
+    info:
+      path: Transcriber/Info.plist
+      properties:
+        LSUIElement: true
+        CFBundleName: Transcriber
+        CFBundleDisplayName: Transcriber
+        NSMicrophoneUsageDescription: "Transcriber needs microphone access to capture your voice for transcription."
+
+  TranscriberTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: TranscriberTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.dankozlowski.TranscriberTests
+    dependencies:
+      - target: Transcriber

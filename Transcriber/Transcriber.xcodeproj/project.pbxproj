@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		034051C53CFC9C12B92D36A9 /* TranscriptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1EBADCDF3CEE7817D82633 /* TranscriptViewModel.swift */; };
+		0E9995A8F855A8DA2C6C299A /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7093A62D505CE280CA71253F /* PopoverView.swift */; };
+		122A73A2C82C954635EB38A2 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF184B4D40898B177BDD5E00 /* SettingsManager.swift */; };
+		1E21CC50B777AD034FD51190 /* SessionConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2216863F7C92828D113D4986 /* SessionConfigTests.swift */; };
+		2059411217A3D069B191D675 /* AudioCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385DD89304699ABD63ACF2EE /* AudioCaptureManager.swift */; };
+		3456F67E675BFD9386CA7955 /* TranscriptEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBE29BBA9F7AAA3BB8DBBE /* TranscriptEntryTests.swift */; };
+		363EB71E3E1EC3C8055C55A6 /* SampleRateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AAE086F9C86A0E04A7E565 /* SampleRateConverter.swift */; };
+		438A85D6169E39875012EFC2 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DAA5AFA58B3D8488CD4098 /* KeychainHelper.swift */; };
+		5E352685FBAF4336A7BEA1D2 /* TranscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3562F9AE91B4460E3D6F472D /* TranscriptionService.swift */; };
+		60C613EE4FF62EC70B1F3205 /* TranscriptEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB699A6499193BABF518352 /* TranscriptEntry.swift */; };
+		6D972942BEEE96CDFF87BDFF /* TranscriptionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78D96535A1ECA8E286D1A3E /* TranscriptionServiceTests.swift */; };
+		7E9CC97E60BE2C1A68ABF57D /* MixingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49167522BC310B8D27429876 /* MixingBufferTests.swift */; };
+		8A2DAE2674EE73FFD4DC50E4 /* MixingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387BC6954A90679C94EA8BA8 /* MixingBuffer.swift */; };
+		8DC860B9F558D9D734EA0E1E /* SessionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB847CF0FE2BCC82CD7648 /* SessionConfig.swift */; };
+		95F60F3D3A6FC51B9A7E98E2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5876A65FA164FCD589E480 /* SettingsView.swift */; };
+		AC3D17FD21E44878F7681CCF /* ObsidianService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE3839118349FD863F1B57 /* ObsidianService.swift */; };
+		BD0A956D102BA76678ABAD71 /* TranscriptWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA112AD3E596F05CE234179 /* TranscriptWindowView.swift */; };
+		CEC92FD6438B508750DC2A34 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D312DCF74607D5AD6EB26 /* AudioRecorderService.swift */; };
+		D88CC0A9E543C398021DE7F5 /* TranscriberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816005239670E1BB547A973 /* TranscriberApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		75FE023BFAFED5135388944D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B873BF05231D1E1132761BF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC3C3054B1D759173F72F523;
+			remoteInfo = Transcriber;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01DE367C45C9A921992FC816 /* TranscriberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranscriberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CFBE29BBA9F7AAA3BB8DBBE /* TranscriptEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptEntryTests.swift; sourceTree = "<group>"; };
+		1B1EBADCDF3CEE7817D82633 /* TranscriptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewModel.swift; sourceTree = "<group>"; };
+		2216863F7C92828D113D4986 /* SessionConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionConfigTests.swift; sourceTree = "<group>"; };
+		3562F9AE91B4460E3D6F472D /* TranscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionService.swift; sourceTree = "<group>"; };
+		35DAA5AFA58B3D8488CD4098 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		385DD89304699ABD63ACF2EE /* AudioCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureManager.swift; sourceTree = "<group>"; };
+		387BC6954A90679C94EA8BA8 /* MixingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixingBuffer.swift; sourceTree = "<group>"; };
+		38AAE086F9C86A0E04A7E565 /* SampleRateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRateConverter.swift; sourceTree = "<group>"; };
+		3FA112AD3E596F05CE234179 /* TranscriptWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptWindowView.swift; sourceTree = "<group>"; };
+		49167522BC310B8D27429876 /* MixingBufferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixingBufferTests.swift; sourceTree = "<group>"; };
+		4EB699A6499193BABF518352 /* TranscriptEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptEntry.swift; sourceTree = "<group>"; };
+		65DB847CF0FE2BCC82CD7648 /* SessionConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionConfig.swift; sourceTree = "<group>"; };
+		7093A62D505CE280CA71253F /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		7C5876A65FA164FCD589E480 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8D72034316122CDE0D352302 /* Transcriber.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transcriber.entitlements; sourceTree = "<group>"; };
+		B29EE599CB9A159C19E9DB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D5B76BB4EBDFD120F68CBC7B /* Transcriber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transcriber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE3D312DCF74607D5AD6EB26 /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
+		F78D96535A1ECA8E286D1A3E /* TranscriptionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionServiceTests.swift; sourceTree = "<group>"; };
+		F816005239670E1BB547A973 /* TranscriberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriberApp.swift; sourceTree = "<group>"; };
+		FCAE3839118349FD863F1B57 /* ObsidianService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianService.swift; sourceTree = "<group>"; };
+		FF184B4D40898B177BDD5E00 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		22B20037777CB7F66C4C8CF6 /* TranscriberTests */ = {
+			isa = PBXGroup;
+			children = (
+				49167522BC310B8D27429876 /* MixingBufferTests.swift */,
+				2216863F7C92828D113D4986 /* SessionConfigTests.swift */,
+				0CFBE29BBA9F7AAA3BB8DBBE /* TranscriptEntryTests.swift */,
+				F78D96535A1ECA8E286D1A3E /* TranscriptionServiceTests.swift */,
+			);
+			path = TranscriberTests;
+			sourceTree = "<group>";
+		};
+		2EBEF5BDF0077230C9558065 = {
+			isa = PBXGroup;
+			children = (
+				E890AF81BDD67F1CB89B9F00 /* Transcriber */,
+				22B20037777CB7F66C4C8CF6 /* TranscriberTests */,
+				B5C47DA106CFB7244F15E022 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6BBDD7B3401EA298677674DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65DB847CF0FE2BCC82CD7648 /* SessionConfig.swift */,
+				4EB699A6499193BABF518352 /* TranscriptEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D66D13C6470303C431B282C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1B1EBADCDF3CEE7817D82633 /* TranscriptViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B5C47DA106CFB7244F15E022 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5B76BB4EBDFD120F68CBC7B /* Transcriber.app */,
+				01DE367C45C9A921992FC816 /* TranscriberTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D75CC74E10145E0165F0DF8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7093A62D505CE280CA71253F /* PopoverView.swift */,
+				7C5876A65FA164FCD589E480 /* SettingsView.swift */,
+				3FA112AD3E596F05CE234179 /* TranscriptWindowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D8446B9379FD1F729FB7DE60 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				385DD89304699ABD63ACF2EE /* AudioCaptureManager.swift */,
+				EE3D312DCF74607D5AD6EB26 /* AudioRecorderService.swift */,
+				35DAA5AFA58B3D8488CD4098 /* KeychainHelper.swift */,
+				387BC6954A90679C94EA8BA8 /* MixingBuffer.swift */,
+				FCAE3839118349FD863F1B57 /* ObsidianService.swift */,
+				38AAE086F9C86A0E04A7E565 /* SampleRateConverter.swift */,
+				FF184B4D40898B177BDD5E00 /* SettingsManager.swift */,
+				3562F9AE91B4460E3D6F472D /* TranscriptionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E890AF81BDD67F1CB89B9F00 /* Transcriber */ = {
+			isa = PBXGroup;
+			children = (
+				B29EE599CB9A159C19E9DB88 /* Info.plist */,
+				8D72034316122CDE0D352302 /* Transcriber.entitlements */,
+				F816005239670E1BB547A973 /* TranscriberApp.swift */,
+				6BBDD7B3401EA298677674DC /* Models */,
+				D8446B9379FD1F729FB7DE60 /* Services */,
+				9D66D13C6470303C431B282C /* ViewModels */,
+				D75CC74E10145E0165F0DF8C /* Views */,
+			);
+			path = Transcriber;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE4B0B16B0B0DEE95A55FE7D /* TranscriberTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7007B9487F219E0571B0F3FB /* Build configuration list for PBXNativeTarget "TranscriberTests" */;
+			buildPhases = (
+				1E6C8D1B3ED5C2D37A74CC0E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20E9B44F213228F24583FA5B /* PBXTargetDependency */,
+			);
+			name = TranscriberTests;
+			packageProductDependencies = (
+			);
+			productName = TranscriberTests;
+			productReference = 01DE367C45C9A921992FC816 /* TranscriberTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC3C3054B1D759173F72F523 /* Transcriber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D40DF07FA4364DD5040F8402 /* Build configuration list for PBXNativeTarget "Transcriber" */;
+			buildPhases = (
+				500DEC5475F85F6910204E76 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Transcriber;
+			packageProductDependencies = (
+			);
+			productName = Transcriber;
+			productReference = D5B76BB4EBDFD120F68CBC7B /* Transcriber.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B873BF05231D1E1132761BF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 9CBD78D6B35E86ACCCEBB14D /* Build configuration list for PBXProject "Transcriber" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2EBEF5BDF0077230C9558065;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B5C47DA106CFB7244F15E022 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC3C3054B1D759173F72F523 /* Transcriber */,
+				AE4B0B16B0B0DEE95A55FE7D /* TranscriberTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E6C8D1B3ED5C2D37A74CC0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9CC97E60BE2C1A68ABF57D /* MixingBufferTests.swift in Sources */,
+				1E21CC50B777AD034FD51190 /* SessionConfigTests.swift in Sources */,
+				3456F67E675BFD9386CA7955 /* TranscriptEntryTests.swift in Sources */,
+				6D972942BEEE96CDFF87BDFF /* TranscriptionServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		500DEC5475F85F6910204E76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2059411217A3D069B191D675 /* AudioCaptureManager.swift in Sources */,
+				CEC92FD6438B508750DC2A34 /* AudioRecorderService.swift in Sources */,
+				438A85D6169E39875012EFC2 /* KeychainHelper.swift in Sources */,
+				8A2DAE2674EE73FFD4DC50E4 /* MixingBuffer.swift in Sources */,
+				AC3D17FD21E44878F7681CCF /* ObsidianService.swift in Sources */,
+				0E9995A8F855A8DA2C6C299A /* PopoverView.swift in Sources */,
+				363EB71E3E1EC3C8055C55A6 /* SampleRateConverter.swift in Sources */,
+				8DC860B9F558D9D734EA0E1E /* SessionConfig.swift in Sources */,
+				122A73A2C82C954635EB38A2 /* SettingsManager.swift in Sources */,
+				95F60F3D3A6FC51B9A7E98E2 /* SettingsView.swift in Sources */,
+				D88CC0A9E543C398021DE7F5 /* TranscriberApp.swift in Sources */,
+				60C613EE4FF62EC70B1F3205 /* TranscriptEntry.swift in Sources */,
+				034051C53CFC9C12B92D36A9 /* TranscriptViewModel.swift in Sources */,
+				BD0A956D102BA76678ABAD71 /* TranscriptWindowView.swift in Sources */,
+				5E352685FBAF4336A7BEA1D2 /* TranscriptionService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20E9B44F213228F24583FA5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC3C3054B1D759173F72F523 /* Transcriber */;
+			targetProxy = 75FE023BFAFED5135388944D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3A82BD3F81469D8AD8DA5FF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Transcriber/Transcriber.entitlements;
+				CODE_SIGN_IDENTITY = "Transcriber Dev";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Transcriber/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dankozlowski.Transcriber;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6F5195B2DA40AD1346770FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dankozlowski.TranscriberTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transcriber.app/Contents/MacOS/Transcriber";
+			};
+			name = Debug;
+		};
+		8A462A925E9D1F88C8BA7BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Transcriber/Transcriber.entitlements;
+				CODE_SIGN_IDENTITY = "Transcriber Dev";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Transcriber/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dankozlowski.Transcriber;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AA0AF7601767578097374C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		AA6E38BC930FDCACE4BFBA10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dankozlowski.TranscriberTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transcriber.app/Contents/MacOS/Transcriber";
+			};
+			name = Release;
+		};
+		D7F603F7124F05B0C2ECB768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7007B9487F219E0571B0F3FB /* Build configuration list for PBXNativeTarget "TranscriberTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F5195B2DA40AD1346770FDD /* Debug */,
+				AA6E38BC930FDCACE4BFBA10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9CBD78D6B35E86ACCCEBB14D /* Build configuration list for PBXProject "Transcriber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0AF7601767578097374C66 /* Debug */,
+				D7F603F7124F05B0C2ECB768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D40DF07FA4364DD5040F8402 /* Build configuration list for PBXNativeTarget "Transcriber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A462A925E9D1F88C8BA7BB0 /* Debug */,
+				3A82BD3F81469D8AD8DA5FF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B873BF05231D1E1132761BF8 /* Project object */;
+}
