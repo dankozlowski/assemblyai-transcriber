@@ -29,6 +29,7 @@ final class AudioCaptureManager {
     private var scStream: SCStream?
     private var scOutput: SCStreamAudioOutput?
     private let engine = AVAudioEngine()
+    private var streamDelegate: StreamDelegate?
 
     nonisolated(unsafe) private let systemConverter = SampleRateConverter()
     nonisolated(unsafe) private let micConverter = SampleRateConverter()
@@ -38,14 +39,18 @@ final class AudioCaptureManager {
     private var drainTask: Task<Void, Never>?
     private var cachedFilter: SCContentFilter?
     private var pickerObserver: PickerObserver?
+    private var configObserver: Any?
+    private var currentMicDeviceUID: String?
 
     /// Starts capture and returns an AsyncStream of 16kHz mono Int16 PCM chunks.
     func start(micDeviceUID: String? = nil) async throws -> AsyncStream<Data> {
         let (stream, continuation) = AsyncStream<Data>.makeStream()
         self.continuation = continuation
+        self.currentMicDeviceUID = micDeviceUID
 
         try await startSystemAudioCapture()
         try startMicCapture(deviceUID: micDeviceUID)
+        observeAudioConfigChanges()
 
         // Periodically drain the mixing buffer
         drainTask = Task.detached { [weak self] in
@@ -66,6 +71,11 @@ final class AudioCaptureManager {
         drainTask?.cancel()
         drainTask = nil
 
+        if let obs = configObserver {
+            NotificationCenter.default.removeObserver(obs)
+            configObserver = nil
+        }
+
         engine.stop()
         engine.inputNode.removeTap(onBus: 0)
 
@@ -73,6 +83,7 @@ final class AudioCaptureManager {
             try? await scStream.stopCapture()
             self.scStream = nil
         }
+        streamDelegate = nil
 
         continuation?.finish()
         continuation = nil
@@ -103,7 +114,16 @@ final class AudioCaptureManager {
         }
         self.scOutput = output
 
-        let stream = SCStream(filter: filter, configuration: config, delegate: nil)
+        let delegate = StreamDelegate { [weak self] error in
+            guard let self else { return }
+            print("SCStream stopped with error: \(error.localizedDescription) — restarting system audio capture")
+            Task { @MainActor in
+                await self.restartSystemAudioCapture()
+            }
+        }
+        self.streamDelegate = delegate
+
+        let stream = SCStream(filter: filter, configuration: config, delegate: delegate)
         try stream.addStreamOutput(
             output,
             type: .audio,
@@ -111,6 +131,44 @@ final class AudioCaptureManager {
         )
         self.scStream = stream
         try await stream.startCapture()
+    }
+
+    private func restartSystemAudioCapture() async {
+        if let scStream {
+            try? await scStream.stopCapture()
+            self.scStream = nil
+        }
+        do {
+            try await startSystemAudioCapture()
+        } catch {
+            print("Failed to restart system audio capture: \(error.localizedDescription)")
+        }
+    }
+
+    // MARK: - Audio Engine Configuration Changes
+
+    private func observeAudioConfigChanges() {
+        configObserver = NotificationCenter.default.addObserver(
+            forName: .AVAudioEngineConfigurationChange,
+            object: engine,
+            queue: nil
+        ) { [weak self] _ in
+            guard let self else { return }
+            print("AVAudioEngine configuration changed — restarting mic capture")
+            Task { @MainActor in
+                self.restartMicCapture()
+            }
+        }
+    }
+
+    private func restartMicCapture() {
+        engine.stop()
+        engine.inputNode.removeTap(onBus: 0)
+        do {
+            try startMicCapture(deviceUID: currentMicDeviceUID)
+        } catch {
+            print("Failed to restart mic capture: \(error.localizedDescription)")
+        }
     }
 
     private nonisolated func handleSystemAudio(_ sampleBuffer: CMSampleBuffer) {
@@ -247,6 +305,20 @@ private final class PickerObserver: NSObject, SCContentSharingPickerObserver {
 
     func contentSharingPickerStartDidFailWithError(_ error: any Error) {
         onCancel()
+    }
+}
+
+// MARK: - SCStream Delegate
+
+private final class StreamDelegate: NSObject, SCStreamDelegate, @unchecked Sendable {
+    let onError: (Error) -> Void
+
+    init(onError: @escaping (Error) -> Void) {
+        self.onError = onError
+    }
+
+    func stream(_ stream: SCStream, didStopWithError error: any Error) {
+        onError(error)
     }
 }
 
