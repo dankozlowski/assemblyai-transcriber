@@ -398,10 +398,13 @@ xcodebuild test -project Transcriber.xcodeproj -scheme Transcriber -configuratio
 `scripts/release.sh` builds, signs, notarizes, staples, and packages the app.
 
 ```bash
-TEAM_ID=XXXXXXXXXX scripts/release.sh                 # full release: notarized DMG
-TEAM_ID=XXXXXXXXXX scripts/release.sh --skip-notarize # signed DMG, no notarization
-scripts/release.sh --adhoc                            # ad-hoc signed ZIP
+scripts/release.sh                 # full release: notarized DMG
+scripts/release.sh --skip-notarize # signed DMG, no notarization
+scripts/release.sh --adhoc         # ad-hoc signed ZIP
 ```
+
+The script signs under Apple Developer team `7GVQX5KCDD` by default. Override with
+`TEAM_ID=...` to sign under a different team.
 
 ### Requirements for a real release
 
@@ -413,7 +416,7 @@ Store notarization credentials once:
 
 ```bash
 xcrun notarytool store-credentials "transcriber-notary" \
-  --apple-id <your-apple-id> --team-id <your-team-id> --password <app-specific-password>
+  --apple-id <your-apple-id> --team-id 7GVQX5KCDD --password <app-specific-password>
 ```
 
 App-specific passwords come from appleid.apple.com under Sign-In and Security.

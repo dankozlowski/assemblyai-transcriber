@@ -7,7 +7,7 @@
 #   scripts/release.sh --adhoc         Ad-hoc signed ZIP (no Apple membership needed)
 #
 # Environment:
-#   TEAM_ID         Apple Developer team ID   (required unless --adhoc)
+#   TEAM_ID         Apple Developer team ID   (default: 7GVQX5KCDD)
 #   NOTARY_PROFILE  notarytool keychain profile name (default: transcriber-notary)
 #
 set -euo pipefail
@@ -22,7 +22,8 @@ ARCHIVE="$BUILD_DIR/$APP_NAME.xcarchive"
 EXPORT_DIR="$BUILD_DIR/export"
 APP="$EXPORT_DIR/$APP_NAME.app"
 
-TEAM_ID="${TEAM_ID:-}"
+# Paid Apple Developer team. Override with TEAM_ID=... if you ever sign under another.
+TEAM_ID="${TEAM_ID:-7GVQX5KCDD}"
 NOTARY_PROFILE="${NOTARY_PROFILE:-transcriber-notary}"
 MODE=full
 
