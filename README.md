@@ -338,6 +338,8 @@ assemblyai-transcriber/
 ├── .gitignore
 ├── project.yml                        # xcodegen project definition
 ├── Transcriber.xcodeproj/             # generated — do not edit manually
+├── scripts/
+│   └── release.sh                     # signed/notarized distribution builds
 ├── Transcriber/
 │   ├── TranscriberApp.swift           # @main — menu bar, window scenes
 │   ├── Info.plist                     # LSUIElement, mic usage description
@@ -390,6 +392,59 @@ xcodebuild test -project Transcriber.xcodeproj -scheme Transcriber -configuratio
 - TranscriptEntryTests — final/partial entries, markdown formatting
 - MixingBufferTests — drain threshold, overflow clamping, single-source operation
 - TranscriptionServiceTests — JSON parsing for all event types (Begin, Turn, Termination, Error)
+
+## Building for Distribution
+
+`scripts/release.sh` builds, signs, notarizes, staples, and packages the app.
+
+```bash
+TEAM_ID=XXXXXXXXXX scripts/release.sh                 # full release: notarized DMG
+TEAM_ID=XXXXXXXXXX scripts/release.sh --skip-notarize # signed DMG, no notarization
+scripts/release.sh --adhoc                            # ad-hoc signed ZIP
+```
+
+### Requirements for a real release
+
+Distributing outside the App Store needs a `Developer ID Application` certificate,
+which requires a paid Apple Developer Program membership. An `Apple Development`
+certificate is not sufficient — Gatekeeper rejects it on other machines.
+
+Store notarization credentials once:
+
+```bash
+xcrun notarytool store-credentials "transcriber-notary" \
+  --apple-id <your-apple-id> --team-id <your-team-id> --password <app-specific-password>
+```
+
+App-specific passwords come from appleid.apple.com under Sign-In and Security.
+Override the profile name with `NOTARY_PROFILE` if you use a different one.
+
+The Release configuration signs with `Developer ID Application` and enables
+Hardened Runtime, which notarization requires. Hardened Runtime also blocks
+microphone access unless `com.apple.security.device.audio-input` is present in
+`Transcriber.entitlements` — it is, and removing it will break mic capture in
+release builds while leaving debug builds working.
+
+### Sharing without a membership
+
+`--adhoc` produces an ad-hoc signed ZIP that needs no Apple membership. Gatekeeper
+will still warn on other Macs; recipients open it the first time by right-clicking
+the app and choosing Open, or by clearing the quarantine attribute:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Transcriber.app
+```
+
+### Before shipping to other people
+
+API keys are currently stored in UserDefaults as plaintext, readable in
+`~/Library/Preferences`. `Services/KeychainHelper.swift` exists but is unused;
+moving the AssemblyAI and Obsidian keys into the Keychain is the obvious
+hardening step before wider distribution.
+
+Changing the signing identity changes the code signature, which resets the
+Screen Recording permission grant. Expect to re-authorize once after switching
+from the development certificate to Developer ID.
 
 ## Troubleshooting
 

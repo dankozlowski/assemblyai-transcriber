@@ -22,7 +22,17 @@ targets:
         INFOPLIST_FILE: Transcriber/Info.plist
         CODE_SIGN_ENTITLEMENTS: Transcriber/Transcriber.entitlements
         PRODUCT_BUNDLE_IDENTIFIER: com.dankozlowski.Transcriber
-        CODE_SIGN_IDENTITY: "Transcriber Dev"
+        CODE_SIGN_STYLE: Manual
+      configs:
+        # Local development: self-signed cert, no hardened runtime.
+        Debug:
+          CODE_SIGN_IDENTITY: "Transcriber Dev"
+          ENABLE_HARDENED_RUNTIME: NO
+        # Distribution: Developer ID + hardened runtime (required to notarize).
+        # DEVELOPMENT_TEAM is supplied at build time by scripts/release.sh.
+        Release:
+          CODE_SIGN_IDENTITY: "Developer ID Application"
+          ENABLE_HARDENED_RUNTIME: YES
     info:
       path: Transcriber/Info.plist
       properties:
